@@ -6,6 +6,7 @@ import unittest
 class MyTestCase(unittest.TestCase):
 
     def setUp(self):
+        """ initialization, run prior to each test """
         self.ba1 = BankAccount("C01", 0)
     
     def test_deposit(self):  
@@ -15,6 +16,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.ba1.withdrawal(300), -300)
 
     def tearDown(self):
+        """ clean up, run after each test """
         self.ba1 = None   
 
 # main
